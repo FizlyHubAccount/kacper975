@@ -1,0 +1,105 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false,IntroIcon = "rbxassetid://6026647916", IntroText = "Key System", SaveConfig = true, ConfigFolder = "Fizly Advence Key System"})
+
+
+
+function LoaderCredits()
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "Advence Key System By Fizly Hub", IntroIcon = "rbxassetid://6022668898", HidePremium = false, SaveConfig = true, ConfigFolder = "Credits Window"})
+
+
+
+
+
+function Destroy()
+    OrionLib:Destroy()
+  
+  end
+  
+  function CorrectKeyNotification()
+      OrionLib:MakeNotification({
+    Name = "Correct Key!",
+    Content = "You have entered the correct key! Please wait.",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+      })
+  end
+  
+  
+   
+  
+  
+  
+  function InCorrectKeyNotification()
+      OrionLib:MakeNotification({
+    Name = "InCorrect Key!",
+    Content = "You have entered the Incorrect key!",
+    Image = "rbxassetid://4483345998",
+    Time = 7
+      })
+  end
+  
+  function GetKeyNotifiation()
+      OrionLib:MakeNotification({
+    Name = "Get Key Link!",
+    Content = "Get Key on Discord: soon",
+    Image = "rbxassetid://4483345998",
+    Time = 7
+      })
+  end
+  
+  function HowToGetKeyNotifiation()
+      OrionLib:MakeNotification({
+    Name = "Here how you can key",
+    Content = "Get Key on Discord: ",
+    Image = "rbxassetid://4483345998",
+    Time = 7
+      })
+  end
+  --tab and more
+  local Tab = Window:MakeTab({
+      Name = "Key",
+      Icon = "rbxassetid://4483345998",
+      PremiumOnly = false
+  })
+  
+  
+  
+  Tab:AddTextbox({
+      Name = "Enter Key ",
+      Default = "",
+      TextDisappear = true,
+      Callback = function(Value)
+          _G.KeyInput = Value
+      end    
+  })
+  
+  
+          
+          
+  
+  Tab:AddButton({
+      Name = "Check Key",
+      Callback = function()
+          if _G.KeyInput == _G.Key then
+              CorrectKeyNotification()
+             LoaderCredits()
+              Destroy()
+              wait(2)
+              test1()
+  
+  
+          
+  
+             
+          else
+  
+              InCorrectKeyNotification()
+          end
+                
+        end    
+  })
+  
+    
